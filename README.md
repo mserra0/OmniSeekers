@@ -41,7 +41,7 @@ We designed a 3-wheel omnidirectional robot base for our swarm of robots because
 - [![Figma](https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=white)](https://www.figma.com)
 - [![Blender](https://img.shields.io/badge/-Blender-F5792A?logo=blender&logoColor=white)](https://www.blender.org)
 
-## Install
+## Setup and Install
 
 ```
 pip install -r requirements.txt
@@ -63,6 +63,8 @@ In this section, we provide an overview of the key components that make up the O
 | Battery Holder 4xAA                                | 1     | 2.00 €  |
 | **Total Price:**                                   |       | 121.02 € | 
 
+The Total Price especified is only for a single robot.
+
 ## Details
 In this section we will describe software and hardware details of our project. 
 
@@ -82,7 +84,7 @@ KiCad is utilized for creating a detailed schematic of the compact circuit to in
 
 #### Blender
 Blender is used to design our custom 3D components, allowing us to make the robot as compact as possible. Each piece is meticulously crafted to fit our specific requirements, ensuring optimal use of space and functionality. All parts are then 3D printed using a compatible program tailored to the specific printer being used. You can find the pieces in the `3Ddesign` folder.
-<img src="resources/3D/Base.png" width="600" height="350" style="border-radius: 0%;">
+<img src="resources/omniseeker.gif" width="600" height="350" style="border-radius: 0%;">
 
 ## Libraries
 
@@ -94,8 +96,26 @@ The following libraries are essential for the project:
   * **[Scipy](https://www.scipy.org/):** For scientific computing.”
   * **[matplotlib](https://matplotlib.org/):** For plotting and visualizing data.
 
-## To do
+## Technical Concepts
+In this section, we delve into the key technical concepts that underpin the functionality and performance of the OmniSeekers project. Understanding these concepts is essential for appreciating the intricacies of the robot's design and operation. We cover algorithms for navigation, methods for precise movement, and communication protocols that enable seamless integration with cloud services.
+
+### Bug Algorithm
+The Bug algorithm is a family of simple yet effective pathfinding algorithms used in robotics for navigation and obstacle avoidance. These algorithms are particularly useful in environments where the robot has no prior knowledge of obstacles and must navigate in real-time. We have chosen this method because we do not use GPS or other mapping techniques such as SLAM.
+
+#### Wall Following
+A key aspect of the Bug algorithm is the Wall Following technique. When the robot encounters an obstacle, it switches to a wall-following behavior, moving along the boundary of the obstacle until it can resume its path towards the target. This method ensures that the robot can navigate around obstacles and continue towards its goal efficiently.
+
+<img src="resources/bugAlgorithm.png" width="600" height="350" style="border-radius: 0%;">
+
+### Odometry and Movement for 3-Wheeled Robots
+Odometry is the use of data from motion sensors to estimate the change in position of a robot over time. For omnidirectional robots with three wheels, precise odometry is crucial to maintain accurate positioning and movement.
+
+#### Omnidirectional Movement
+An omnidirectional robot can move in any direction without changing its orientation. This is achieved through a specific arrangement of wheels and motors, allowing for smooth and flexible navigation. 
+
+<img src="resources/movement" width="600" height="350" style="border-radius: 0%;">
 
 ## References
 
 - 1. McGuire, K. N., De Wagter, C., Tuyls, K., Kappen, H. J., & de Croon, G. C. H. E. (2019). [Minimal navigation solution for a swarm of tiny flying robots to explore an unknown environment. Science Robotics](https://www.science.org/doi/10.1126/scirobotics.aaw9710)
+- 2. maker.moekoe. (2023, 2 mayo). ESP32 based omnidirectional robots w/ camera | makermoekoe [Vídeo]. YouTube. https://www.youtube.com/watch?v=OIdMkZyhx7E
