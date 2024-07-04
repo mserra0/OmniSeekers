@@ -67,7 +67,7 @@ Development was done using Visual Studio. Our robot operates with MicroPython. T
 
 1. Install the following tool:
 ```sh
-pip install esptool
+pip install esptool --user
 ```
 
 2. Find the corresponding firmware for your controller on this page: `https://micropython.org/download/`. We recommend saving the downloaded `.bin` file in the user directory where you will execute the project.
