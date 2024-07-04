@@ -70,21 +70,21 @@ In this section we will describe software and hardware details of our project.
 
 ### Software
 This section details the software architecture of the various interconnected modules of the robot, explaining how each component communicates and collaborates to ensure seamless operation.
-<img src="resources/SofwareArchitecture" width="600" height="350" style="border-radius: 0%;">
+<img src="resources/SofwareArchitecture.png" style="border-radius: 0%;">
 
 
 ### Hardware
 #### Fritzint
 Fritzint is used for connecting the robot's components to ensure proper functionality. This simple version provides a straightforward and efficient setup for integrating various hardware elements seamlessly.
-<img src="resources/FritzintSchematic.png" width="600" height="350" style="border-radius: 0%;">
+<img src="resources/FritzintSchematic.png" style="border-radius: 0%;">
 
 #### KiCad
 KiCad is utilized for creating a detailed schematic of the compact circuit to incorporate the PCB. This complex version ensures precise design and integration, enabling the development of high-quality printed circuit boards.
-<img src="resources/KiCadSchematic.png" width="600" height="350" style="border-radius: 0%;">
+<img src="resources/KiCadSchematic.png" style="border-radius: 0%;">
 
 #### Blender
 Blender is used to design our custom 3D components, allowing us to make the robot as compact as possible. Each piece is meticulously crafted to fit our specific requirements, ensuring optimal use of space and functionality. All parts are then 3D printed using a compatible program tailored to the specific printer being used. You can find the pieces in the `3Ddesign` folder.
-<img src="resources/omniseeker.gif" width="600" height="350" style="border-radius: 0%;">
+<img src="resources/omniseeker.gif" style="border-radius: 0%;">
 
 ## Libraries
 
@@ -105,7 +105,7 @@ The Bug algorithm is a family of simple yet effective pathfinding algorithms use
 #### Wall Following
 A key aspect of the Bug algorithm is the Wall Following technique. When the robot encounters an obstacle, it switches to a wall-following behavior, moving along the boundary of the obstacle until it can resume its path towards the target. This method ensures that the robot can navigate around obstacles and continue towards its goal efficiently.
 
-<img src="resources/bugAlgorithm.png" width="600" height="350" style="border-radius: 0%;">
+<img src="resources/BugAlgorithm.jpg" style="border-radius: 0%;">
 
 ### Odometry and Movement for 3-Wheeled Robots
 Odometry is the use of data from motion sensors to estimate the change in position of a robot over time. For omnidirectional robots with three wheels, precise odometry is crucial to maintain accurate positioning and movement.
@@ -113,7 +113,7 @@ Odometry is the use of data from motion sensors to estimate the change in positi
 #### Omnidirectional Movement
 An omnidirectional robot can move in any direction without changing its orientation. This is achieved through a specific arrangement of wheels and motors, allowing for smooth and flexible navigation. 
 
-<img src="resources/movement" width="600" height="350" style="border-radius: 0%;">
+<img src="resources/movement.png" style="border-radius: 0%;">
 
 ## References
 
