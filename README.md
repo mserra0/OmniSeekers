@@ -1,6 +1,6 @@
 <div align="center">
  <a href="https://github.com/mserra0/OmniSeekers">
-    <img src="resources/Logo.png" alt="Logo" width="400" height="400" style="border-radius: 10%;">
+    <img src="resources/logo.png" alt="Logo" width="400" height="400" style="border-radius: 10%;">
  </a>
  <br/>
  <p align="center">
@@ -40,6 +40,7 @@ We designed a 3-wheel omnidirectional robot base for our swarm of robots because
 * **circuits**: This directory includes circuit diagrams created with Fritzint and KiCad. It contains separate designs for the standard circuit and the PCB layout, ensuring comprehensive documentation of the electronic components.
 * **server**: This section is a forked repository of the Cloud server, enabling remote control and data management for the robot via Google Cloud services.
 * **coppelia**: This folder stores all the simulation files used in CoppeliaSim, where various algorithms like the Bug Algorithm and Wall Following are tested and validated.
+* **src**: This folder stores all the functional code used to connect and move the robot with our server.
 
 ### Dependencies
 - [![Fritzint](https://img.shields.io/badge/-Fritzint-blue)](https://www.fritzint.com)

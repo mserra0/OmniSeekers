@@ -1,0 +1,10 @@
+{
+    "wifi": {
+        "SSID": "ssid",
+        "password": "pwd",
+        "attempts": 3,
+        "delay_in_msec": 200
+    },
+    "server": "ws://<IP>:<PORT>/",
+    "socket_delay_ms": 5
+}
