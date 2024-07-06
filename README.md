@@ -128,6 +128,7 @@ Fritzint is used for connecting the robot's components to ensure proper function
 KiCad is utilized for creating a detailed schematic of the compact circuit to incorporate the PCB. This complex version ensures precise design and integration, enabling the development of high-quality printed circuit boards.
 
 <img src="resources/KiCadSchematic.png" width="500" style="border-radius: 0%;">
+<img src="resources/OmniSeekersPCB.png" width="400" style="border-radius: 0%;">
 
 #### Blender
 Blender is used to design our custom 3D components, allowing us to make the robot as compact as possible. Each piece is meticulously crafted to fit our specific requirements, ensuring optimal use of space and functionality. All parts are then 3D printed using a compatible program tailored to the specific printer being used. You can find the pieces in the `3Ddesign` folder.
