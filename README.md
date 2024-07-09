@@ -1,10 +1,10 @@
 <div align="center">
  <a href="https://github.com/mserra0/OmniSeekers">
-    <img src="resources/logo.png" alt="Logo" width="500" style="border-radius: 10%;">
+    <img src="resources/logo.png" alt="Logo" width="400" style="border-radius: 10%;">
  </a>
  <br/>
  <p align="center">
-    Robotic project aimed at revolutionizing tasks such as Search and Rescue with complete control of all robots in the swarm.
+    Robotic platform aimed at revolutionizing tasks such as Search and Rescue with complete control of all robots in the swarm.
     <br />
  </p>
 </div>
@@ -30,9 +30,11 @@
 - [References](#references)
 
 ## Description
-This project presents an implementation of a swarm of omnidirectional robots with the aim of carrying out Search-and-Rescue tasks without the use of GPS or mapping such as SLAM. For this reason, we have based ourselves on exploration techniques based on Bug Algorithms, specifically on the Swarm Gradient Bug Algorithm (SGBA), presented in the article ["Minimal navigation solution for a swarm of tiny flying robots to explore an unknown environment"¹](https://www.science.org/doi/10.1126/scirobotics.aaw9710). The objective of this project is to present an efficient solution for the search for victims and targets in indoor environments where human access can pose a risk. To carry out the coverage of an extensive space in a consistent time, we have considered that the use of techniques developed in the field of Swarm Robotics is very suitable for distributing the exploration task among different entities with relatively simple objectives. Furthermore, this approach allows us to use affordable controllers that in other cases where computation would be more expensive. For the recognition of victims and the global coordination of the robots, a central server will be used from which computer vision techniques and movement control will be applied if it's necessary. 
+This project not only implements a swarm of omnidirectional robots but also serves as a multipurpose development platform. Designed to allow users to develop their own ideas affordably, this platform fosters innovation beyond its initial scope.
 
-We designed a 3-wheel omnidirectional robot base for our swarm of robots because it uses fewer components, is lighter in weight, and provides full mobility for the robots. We chose the ESP32 chipset as the robots' controller for both video transmission and robot control. This enables the robots to communicate with each other and the server efficiently, offering a fast and cost-effective implementation. 
+Our project focuses on creating a swarm of omnidirectional robots for Search-and-Rescue tasks without relying on GPS or SLAM mapping. We use exploration techniques based on Bug Algorithms, specifically the Swarm Gradient Bug Algorithm (SGBA) presented in the article "Minimal navigation solution for a swarm of tiny flying robots to explore an unknown environment". The aim is to provide an efficient solution for locating victims and targets in indoor environments where human access can be risky. Utilizing techniques from Swarm Robotics, we distribute the exploration tasks among multiple entities with simple objectives, enabling the use of affordable controllers instead of more costly computational solutions. A central server, employing computer vision and movement control techniques, coordinates the robots and recognizes victims when necessary.
+
+We designed a 3-wheel omnidirectional robot base for our swarm, which uses fewer components, is lightweight, and offers full mobility. The ESP32 chipset serves as the robots' controller for video transmission and control, ensuring efficient communication with each other and the server. This design provides a fast and cost-effective implementation, making it an ideal foundation for further development and innovation.
 
 ### Structure
 * **resources**: This folder contains all the images and assets used in the README documentation to enhance visual understanding and presentation.
@@ -79,10 +81,10 @@ pip install esptool --user
 esptool --chip esp32 --port COM10 erase_flash
 ```
 
-4. Once done, the next command deploys the downloaded firmware to the connected controller. Change the `ESP32_GENERIC-20220116-v1.18.bin` file to the one you downloaded. Again, hold down the Boot button while executing the command.
+4. Once done, the next command deploys the downloaded firmware to the connected controller. Change the `ESP32_GENERIC-20240602-v1.23.0.bin` file to the one you downloaded. Again, hold down the Boot button while executing the command.
 
 ```sh
-esptool --chip esp32 --port COM10 --baud 460800 write_flash -z 0x1000 ESP32_GENERIC-20220117-v1.18.bin
+esptool --chip esp32 --port COM10 --baud 460800 write_flash -z 0x1000 ESP32_GENERIC-20240602-v1.23.0.bin
 ```
 
 5. Now, install the PyMakr extension in Visual Studio Code. This extension offers functionalities similar to ArduinoIDE, such as connecting devices, disconnecting, uploading files, and viewing the Serial Monitor. Installing additional libraries in the program is unnecessary, as MicroPython already includes many commonly used libraries.
@@ -106,7 +108,8 @@ In this section, we provide an overview of the key components that make up the O
 | UltraSound HC-SR04                                 | 3     | 1.80 €  |
 | PowerBank 5000mAh                                  | 1     | 11.99 € |
 | Battery Holder 4xAA                                | 1     | 2.00 €  |
-| **Total Price:**                                   |       | 121.02 € | 
+| PCB without shipping x5 pack (optional)            | 1     | 17.99€  |
+| **Total Price:**                                   |       | 139.01 € | 
 
 The Total Price especified is only for a single robot.
 
@@ -128,7 +131,6 @@ Fritzint is used for connecting the robot's components to ensure proper function
 KiCad is utilized for creating a detailed schematic of the compact circuit to incorporate the PCB. This complex version ensures precise design and integration, enabling the development of high-quality printed circuit boards.
 
 <img src="resources/KiCadSchematic.png" width="500" style="border-radius: 0%;">
-<img src="resources/OmniSeekersPCB.png" width="400" style="border-radius: 0%;">
 
 #### Blender
 Blender is used to design our custom 3D components, allowing us to make the robot as compact as possible. Each piece is meticulously crafted to fit our specific requirements, ensuring optimal use of space and functionality. All parts are then 3D printed using a compatible program tailored to the specific printer being used. You can find the pieces in the `3Ddesign` folder.
@@ -173,7 +175,15 @@ An omnidirectional robot can move in any direction without changing its orientat
 
 ### Intra Robots Connection
 
-AQUI PONER LA EXPLICACION DE LOS ROBOTS
+In our project, the intra-robot communication is achieved through Bluetooth Low Energy (BLE) technology. BLE is chosen for its low power consumption and sufficient range for indoor environments, making it ideal for the swarm of robots.
+
+Each robot is equipped with an ESP32 chipset, which supports BLE. This allows the robots to send and receive messages from one another. The communication process involves broadcasting messages containing specific data packets. These packets include information such as the robot's unique identifier and other relevant status information.
+
+One of the critical aspects of our BLE implementation is the use of Received Signal Strength Indicator (RSSI) values to estimate the proximity of the robots to one another. When a robot receives a message from another robot, it also records the RSSI value of the received message. The RSSI value indicates the power level of the received signal, which inversely correlates with the distance between the two robots.
+
+To determine whether robots are near each other, the system uses a predefined RSSI threshold. If the RSSI value is above this threshold, the robots are considered to be close to one another. Conversely, if the RSSI value is below the threshold, the robots are deemed to be farther apart. This method allows the swarm to dynamically adjust its formation and coordination based on the proximity information.
+
+<img src="resources/ble.png" width="300" style="border-radius: 0%;">
 
 ## Demonstration
 Here's an example of what our swarm of omnidirectional robots can achieve.
