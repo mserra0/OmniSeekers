@@ -4,7 +4,7 @@
  </a>
  <br/>
  <p align="center">
-    The robotic project is aimed at revolutionizing tasks such as Search and Rescue, with complete control of all robots in the swarm, providing also a promising robotic platform.
+    Robotic project aimed at revolutionizing tasks such as Search and Rescue, with complete control of all robots in the swarm, also providing a promising development platform.
     <br />
  </p>
 </div>
