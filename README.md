@@ -1,6 +1,6 @@
 <div align="center">
  <a href="https://github.com/mserra0/OmniSeekers">
-    <img src="resources/logo.png" alt="Logo" width="400" style="border-radius: 10%;">
+    <img src="resources/Group 9 (1).png" alt="Logo" width="800" style="border-radius: 10%;">
  </a>
  <br/>
  <p align="center">
