@@ -7,9 +7,13 @@
     Robotic project aimed at revolutionizing tasks such as Search and Rescue, with complete control of all robots in the swarm, also providing a promising development platform.
     <br />
  </p>
+  <p align="center">
+    Video: https://drive.google.com/file/d/1YUAqtY0p05mBEJel5a-_P5CGvoPXerbN/view
+    <br />
+ </p>
 </div>
 
-Video: https://drive.google.com/file/d/1YUAqtY0p05mBEJel5a-_P5CGvoPXerbN/view
+
 
 ## Table of Contents
 - [Description](#description)
