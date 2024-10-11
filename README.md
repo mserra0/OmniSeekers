@@ -8,7 +8,7 @@
     <br />
  </p>
   <p align="center">
-    Video: https://drive.google.com/file/d/1YUAqtY0p05mBEJel5a-_P5CGvoPXerbN/view
+    <a href="https://www.youtube.com/watch?v=t2NAsWQEcVY&pp=ygULb21uaXNlZWtlcnM%3D">OmniSeekers Video Demo</a>
     <br />
  </p>
 </div>
