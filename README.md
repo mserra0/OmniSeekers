@@ -13,8 +13,6 @@
  </p>
 </div>
 
-
-
 ## Table of Contents
 - [Description](#description)
   - [Structure](#structure)
@@ -42,6 +40,10 @@ Our project focuses on creating a swarm of omnidirectional robots for Search-and
 
 We designed a 3-wheel omnidirectional robot base for our swarm, which uses fewer components, is lightweight, and offers full mobility. The ESP32 chipset serves as the robots' controller for video transmission and control, ensuring efficient communication with each other and the server. This design provides a fast and cost-effective implementation, making it an ideal foundation for further development and innovation.
 
+<p align="center">
+ <img src="resources/OmniSeekers.gif" width="500" style="border-radius: 0%;"
+</p>
+ 
 ### Structure
 * **resources**: This folder contains all the images and assets used in the README documentation to enhance visual understanding and presentation.
 * **3d design**: This folder holds all the 3D models and parts designed for the project, facilitating the creation and assembly of the robot’s physical components.
