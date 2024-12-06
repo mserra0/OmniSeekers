@@ -32,6 +32,9 @@
 - [Demonstration](#demonstration)
 - [To Do](#to-do)
 - [References](#references)
+- [Contributors](#contributors)
+- [License](#license)
+
 
 ## Description
 This project not only implements a swarm of omnidirectional robots but also serves as a multipurpose development platform. Designed to allow users to develop their own ideas affordably, this platform fosters innovation beyond its initial scope.
@@ -212,3 +215,13 @@ To advance this project, we have outlined several tasks that will significantly 
 
 - 1. McGuire, K. N., De Wagter, C., Tuyls, K., Kappen, H. J., & de Croon, G. C. H. E. (2019). [Minimal navigation solution for a swarm of tiny flying robots to explore an unknown environment. Science Robotics](https://www.science.org/doi/10.1126/scirobotics.aaw9710)
 - 2. maker.moekoe. (2023, 2 mayo). ESP32 based omnidirectional robots w/ camera | makermoekoe [Vídeo]. YouTube. https://www.youtube.com/watch?v=OIdMkZyhx7E
+ 
+## Contributors
+
+- **Marc Serra Ortega** - Universitat Autònoma de Barcelona (UAB)
+- **Alvaro Javier Díaz Laureano** - Universitat Autònoma de Barcelona (UAB)
+- **Jan Planas Batllori** - Universitat Autònoma de Barcelona (UAB)
+- **Pol Pugibet Martinez** - Universitat Autònoma de Barcelona (UAB)
+
+## License
+This project is licensed under the [MIT License](LICENSE).
